@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="parent">
+      <div class="solid-circle"></div>
+      <div class="header-home">
+        <h3 class="m-0">Expense Tracker <img src="https://img.freepik.com/free-vector/remittance-money-forward-cash-overseas-direct-funding-give-allowance-spare-sum-getting-payroll-transferring-forex-money-drop-coin-isolated-concept-metaphor-illustration_335657-1214.jpg?t=st=1739103944~exp=1739107544~hmac=8813a7922ac4f89cdc26cf30d83be49bd1bb2df4174203ecd75227aba538f5b6&w=740" alt="" width="35" height="35px"></h3>
+        <button class="btn btn-md" id="click-here-button">click here</button>
+      </div>
+      <div class="main-content">
+        <h5>Hello <img src="https://img.freepik.com/free-photo/pretty-cheerful-brunette-girl-happily-waving-hello-camera-colorful-background-greeting-expression_574295-2397.jpg?ga=GA1.1.150692923.1739103914&semt=ais_hybrid" alt="" width="35">, please enter your name</h5>
+        <br>
+        <span id="Name">Name</span>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Name</label>
+        </div>
+        <button class="btn btn-sm" id="login-button" onclick="redirectToTracker()">Login</button>
+      </div>
+    </div>
+
+    <script>
+      // Function to handle login and redirect to tracker.html
+      function redirectToTracker() {
+        var name = document.getElementById('floatingInput').value;
+        
+        // Check if name is entered
+        if(name) {
+          // Store name in local storage or session storage
+          localStorage.setItem("userName", name);
+          // Redirect to tracker.html
+          window.location.href = "./tracker.html";
+        } else {
+          // If name is not entered, show an alert
+          alert("Please enter your name!");
+        }
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>
